@@ -27,4 +27,20 @@ Since this is a reference architecture that can certainly be extended with addit
 When new customers onboard with Duis, the experience should be a very smooth one. This means that the user interfaces provided either via mobile apps, web browser, and even native desktop apps must be extreamly responsive. Customers should never have to wait for any kind of response back from Duis. The user interface must capture the customer's intend via clearly marked actions on the UI. It is those actions that will trigger changes to happen on Duis' backend services. Great care should be taken on the look and feel of every UI element including down to pixel perfect positioning. The design for the look & feel of the UI must match Duis' slogan, colors, and overal marketing. 
 
 ## Technical Capabilities
+The solution architecture is build on CQRS, Event Sourcing, and DDD principles. It also takes advantage of domain events as being the source of truth of the entire system. This means some tradtional headaches such as the impedience mismatch does not exist anymore. There are other technical advantages that this design can bring. However, it also comes at a cost of a more complicated architecture from a technical point of view. Here are the technical advantages:
+
+  * 100% cloud-native solution
+  * Serverless microservice architecture
+  * Domain event based architecture for real-time processing and dashboarding of data
+  * CQRS and event sourced architecture for high-performance executions and 100% accurate audit logs
+  * Domain-driven design (DDD) to stay as close as possible to the business
+  * No impedance mismatch since the microservice(s) only store domain events as immutable, append only events. This means no need to use any object-relational mappers such as hibernate etc.
+  * Core domain model to manage all business rules centrally in one place
+  * Read models are specifically designed for their purpose, e.g. read model 1 for UI, read model 2 for searching, read model 3 for file extractions, etc. all exposed through their own APIs.
+  * Each read model uses polyglot persistance and takes advantage of the AWS cloud environment
+  * New read models can be added in the future as if they existed from the beginning. This is achieved by replaying past domain events without side affects. The new read model can process these past domain events one at a time in chronological order. This allows for easy extensions of the architecture and further analysis of existing data.
+  * Total read model recovery is possible by replaying and processing all domain events again. Thie can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
+  
+
+
 
