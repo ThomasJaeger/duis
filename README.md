@@ -20,6 +20,11 @@ Since this is a reference architecture that can certainly be extended with addit
   * Role based authorizations
   * Generate projections and other reports that include past business events
   * Time travel - easily add new reports and projections as they would have existed at any time in the past
+  * Debit and Credit Transactions
+  * Automatic fraud detection during onboarding and transaction processing
 
 ### Great customer onboarding experience
 When new customers onboard with Duis, the experience should be a very smooth one. This means that the user interfaces provided either via mobile apps, web browser, and even native desktop apps must be extreamly responsive. Customers should never have to wait for any kind of response back from Duis. The user interface must capture the customer's intend via clearly marked actions on the UI. It is those actions that will trigger changes to happen on Duis' backend services. Great care should be taken on the look and feel of every UI element including down to pixel perfect positioning. The design for the look & feel of the UI must match Duis' slogan, colors, and overal marketing. 
+
+## Technical Capabilities
+
