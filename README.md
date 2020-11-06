@@ -1,4 +1,4 @@
-# Duis - online banking for all
+# Duis - online banking for all!
 ## What is this all about?
 Duis is online banking for everyone. The word <b>duis</b> comes from latin and means banking.
 
