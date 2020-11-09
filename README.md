@@ -1,6 +1,6 @@
 # Duis - online banking for all!
 ## What is this all about?
-Duis is online banking for everyone. The word <b>duis</b> comes from latin and means banking.
+Duis is online banking for everyone. The word <b>Duis</b> comes from Latin and means banking.
 
 This reference architecture demonstrates software development techniques such as Event Storming, CQRS, Event Sourcing, and Domain-Driven Design (DDD) concepts. It is meant as a guide and example on how a software solution can be development from the very first idea to its full implementation. It is important to note that the business domain of banking is explored first from a business perspective and then demonstrate how business concepts and knowledge can be captured on the implementation side. The intention is also to capture the human aspects of it such as communicating with the domain experts. Since banking is an overly complex domain, domain-driven design can help capture the complexity of this domain and improve in the quality of the implementation.
 
@@ -25,6 +25,29 @@ Since this is a reference architecture that can certainly be extended with addit
 
 ### Great customer onboarding experience
 When new customers onboard with Duis, the experience should be an exceptionally smooth one. This means that the user interfaces provided either via mobile apps, web browser, and even native desktop apps must be extremely responsive. Customers should never have to wait for any kind of response back from Duis. The user interface must capture the customers intend via clearly marked actions on the UI. It is those actions that will trigger changes to happen on Duis' backend services. Great care should be taken on the look and feel of every UI element including down to pixel perfect positioning. The design for the look & feel of the UI must match Duis' slogan, colors, and overall marketing. 
+
+### Onboarding of customers, accounts, and their relationships
+When new customers sign-up with Duis, all required processes from security background checks to account creations are fully automated. Relationships to existing customers and their dependents and friends are identified and tagged for future analysis. The primary goal is for customers to be able to open a new account as quickly as possible and yet be fully compliant with all state and federal regulations.
+
+### Real-time processing of information as it happens
+Because Duis is tracking all changes in the system via business events, other services can react to these events as they happen. For example, business events can trigger other actions to happen within Duis or by external systems.
+
+### Identifying and triggering of red flags and take action as they happen
+Because Duis has a built-in audit log, it knows when actions need to be prevented to enforce policies and trigger warning notifications.
+
+### Guaranteeing 100% correct audit logs as the system records every change for accurate traceability
+Duis records all changes via a set of commands and their resulting domain events. All domain events are recorded in chronological order as they happen. No information gets discarded. 
+
+### Role based authorizations
+Actions enter Duis as a set of commands and these commands can only be executed with appropriate authorizations. These commands can come from another system or from a user. Commands get denied execution without the right authorization.
+
+### Generate projections and other reports that include past business events
+Duis can generate projections by replaying all domain events and then analyize these domain 
+
+  * Time travel - easily add new reports and projections as they would have existed at any time in the past
+  * Debit and Credit Transactions
+  * Automatic fraud detection during onboarding and transaction processing
+
 
 ## Technical Capabilities
 The solution architecture is built on CQRS, Event Sourcing, and DDD principles. It also takes advantage of domain events as being the source of truth of the entire system. This means some traditional headaches such as the impedance mismatch does not exist anymore. There are other technical advantages that this design can bring. However, it also comes at a cost of a more complicated architecture from a technical point of view. Here are the technical advantages:
