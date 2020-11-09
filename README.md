@@ -71,6 +71,9 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   <img src="Commands.png">
 </p>
 
-![alt text](Commands.png?raw=true)
+<p align="center">
+  <img src="Queries.png">
+</p>
+
 
 
