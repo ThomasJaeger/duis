@@ -6,12 +6,16 @@ This reference architecture demonstrates software development techniques such as
 
 The implementation is accomplished using modern tools and services such as the high-performance .net core runtime coupled with the latest AWS serverless technologies. A critical design goal of the solution architecture is to take full advantage of automation and 100% managed services (AWS services). The solution architecture must provide the business with a list of capabilities to stay extremely competitive but a have extremely low cost in operation and maintenance. It must also be extensible and business capabilities surely will increase over time in part driven by market demands and processes.
 
+## Goals
+The new online bank Duis has a simple goal: provide mostly free banking for all and yet be profitible. To achieve this, Duis is built with on-demand cloud-computing in mind. Cloud-computing resources are only used when they are needed to keep the operational cost down as much as possible. In addition, on-going development and maintenace of Duis is fully automated wherever possible to reduce human errors. All consumer services are free; however, business services do carry small fees.
+
 ## Business Capabilities
 As with any software project and unless you have free money to give away, there must be a business driver to accept the fact that it will cost time and money to create a software solution. In a typical software project, the budget to <b>create</b> this software accounts for only 10% of the total budget until the software is retired. That means 90% will be spent to maintain the solution over time over many years once it is in production. It does not matter how small or large the software solution is. Should we not spent a good amount of time understanding the business domain to increase the chances of success? We should also take care that the software is maintainable. We should also design certain parts of the architecture to be replaceable and not put so much emphasis on reusability. Tale a look at the [sacrificial architecture by Martin Fowler](https://martinfowler.com/bliki/SacrificialArchitecture.html).
 
 Since this is a reference architecture that can certainly be extended with additional features over time, here are the initial sets of business capabilities:
 
   * Great customer onboarding experience
+  * FREE online banking for all consumers
   * Onboarding of customers, accounts, and their relationships
   * Real-time processing of information as it happens
   * Identifying and triggering of red flags and take action as they happen
@@ -24,6 +28,9 @@ Since this is a reference architecture that can certainly be extended with addit
 
 ### Great customer onboarding experience
 When new customers onboard with Duis, the experience should be an exceptionally smooth one. This means that the user interfaces provided either via mobile apps, web browser, and even native desktop apps must be extremely responsive. Customers should never have to wait for any kind of response back from Duis. The user interface must capture the customers intend via clearly marked actions on the UI. It is those actions that will trigger changes to happen on Duis' backend services. Great care should be taken on the look and feel of every UI element including down to pixel perfect positioning. The design for the look & feel of the UI must match Duis' slogan, colors, and overall marketing. 
+
+### FREE online banking for all consumers
+Consumer services are free with the exception of extra services such as credit card offerings. For example, EFT transactions, bill pay, debit card transactions, consumer to consumer wire transactions, electronic wallet transactions, etc. and many more are free.
 
 ### Onboarding of customers, accounts, and their relationships
 When new customers sign-up with Duis, all required processes from security background checks to account creations are fully automated. Relationships to existing customers and their dependents and friends are identified and tagged for future analysis. The primary goal is for customers to be able to open a new account as quickly as possible and yet be fully compliant with all state and federal regulations.
