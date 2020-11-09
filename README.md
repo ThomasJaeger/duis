@@ -70,4 +70,6 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   
 ![alt text](https://github.com/ThomasJaeger/duis/blob/main/Commands.png?raw=true)
 
+![alt text](Commands.png?raw=true)
+
 
