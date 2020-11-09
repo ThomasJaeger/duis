@@ -69,7 +69,7 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * Total read model recovery is possible by replaying and processing all domain events again. This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
   
 <p align="center">
-  ![alt text](https://github.com/ThomasJaeger/duis/blob/main/Commands.png?raw=true)
+  <img width="200" src="Commands.png">
 </p>
 
 ![alt text](Commands.png?raw=true)
