@@ -42,12 +42,16 @@ Duis records all changes via a set of commands and their resulting domain events
 Actions enter Duis as a set of commands and these commands can only be executed with appropriate authorizations. These commands can come from another system or from a user. Commands get denied execution without the right authorization.
 
 ### Generate projections and other reports that include past business events
-Duis can generate projections by replaying all domain events and then analyize these domain 
+Duis can generate projections by replaying all domain events and then analyize the domain events. Projections are a powerful way to create reports based on past events and conditions that caused the domain events. Projections can be run continuesly or during certain events and continuesly feed the business with insights of the state of affairs.
 
-  * Time travel - easily add new reports and projections as they would have existed at any time in the past
-  * Debit and Credit Transactions
-  * Automatic fraud detection during onboarding and transaction processing
+### Time travel - easily add new reports and projections as they would have existed at any time in the past
+Since no information is lost in Duis, new report requirements can analyize past events and deliver new insights. Time travel is supported by analyzing domain events since the beginning of time (since the system went into production).
 
+### Debit and Credit Transactions
+Customers can execute debit and credit transations on their respective accounts. Since this is a core functionality of any banking system, it is also very core of Duis and the entire solution. 
+
+### Automatic fraud detection during onboarding and transaction processing
+Since Duis is 100% cloud-based, it makes use of automated fraud-detection services whenever possible. 
 
 ## Technical Capabilities
 The solution architecture is built on CQRS, Event Sourcing, and DDD principles. It also takes advantage of domain events as being the source of truth of the entire system. This means some traditional headaches such as the impedance mismatch does not exist anymore. There are other technical advantages that this design can bring. However, it also comes at a cost of a more complicated architecture from a technical point of view. Here are the technical advantages:
