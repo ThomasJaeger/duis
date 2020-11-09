@@ -66,11 +66,13 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * Each read model uses polyglot persistence and takes advantage of the AWS cloud environment
   * New read models can be added in the future as if they existed from the beginning. This is achieved by replaying past domain events without side effects. The new read model can process these past domain events one at a time in chronological order. This allows for easy extensions of the architecture and further analysis of existing data.
   * Total read model recovery is possible by replaying and processing all domain events again. This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
-  
+
+## Making Changes via Commands
 <p align="center">
   <img src="Commands.png">
 </p>
 
+## Asking for Information via Queries
 <p align="center">
   <img src="Queries.png">
 </p>
