@@ -70,8 +70,8 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * No impedance mismatch
   * Core domain model to manage all business rules centrally in one place
   * Read models are specifically designed for their purpose using polyglot persistence
-  * New read models can be added in the future as if they existed from the beginning. This is achieved by replaying past domain events without side effects. The new read model can process these past domain events one at a time in chronological order. This allows for easy extensions of the architecture and further analysis of existing data.
-  * Total read model recovery is possible by replaying and processing all domain events again. This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
+  * New read models can be added in the future as if they existed from the beginning
+  * Total read model recovery is possible by replaying and processing all domain events again
 
 ### 100% Cloud-native Solution
 DDD does not dictate any technology to use. However, since we are starting this project from scratch, we want to take full advantage of all AWS services available where it makes sense. So, Duis is a 100% cloud-native solution and is designed to take advnatgae of all managed services available to us.
@@ -96,6 +96,12 @@ Since we are using DDD, we know excatly where we need to go to to add or update 
 
 ### Read models are specifically designed for their purpose using polyglot persistencee
 Since we are using the CQRS pattern, we need at least one read model for the query side of things. However, it is very common to have several read models to express the need to get helpful information out of a system. To do this, Duis has two read models to start with, read model 1 for the UI screens, and read model 2 for simple projections to create reports. We could add more read models over time. For example, we could add a read model for full text searching capabilities, another one for for file extractions, etc. Each read model has it's own API endpoints. Each read model is its own microservice and can be maintained completely seperate from the rest of Duis.
+
+### New read models can be added in the future as if they existed from the beginning
+This is achieved by replaying past domain events without side effects. The new read model can process these past domain events one at a time in chronological order. This allows for easy extensions of the architecture and further analysis of existing data.
+
+### Total read model recovery is possible by replaying and processing all domain events again
+This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted. The read model would simply replay all domain events from the event store one at a time to re-create the read models' current state.
 
 ## Making Changes via Commands
 <p align="center">
