@@ -67,7 +67,7 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * Domain event-based architecture for real-time processing and dashboarding of data
   * CQRS and event sourced architecture for high-performance executions and 100% accurate audit logs
   * Domain-driven design (DDD) to stay as close as possible to the business
-  * No impedance mismatch since the microservice(s) only store domain events as immutable, append only events. This means no need to use any object-relational mappers such as hibernate etc.
+  * No impedance mismatch
   * Core domain model to manage all business rules centrally in one place
   * Read models are specifically designed for their purpose, e.g. read model 1 for UI, read model 2 for searching, read model 3 for file extractions, etc. all exposed through their own APIs.
   * Each read model uses polyglot persistence and takes advantage of the AWS cloud environment
@@ -75,7 +75,7 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * Total read model recovery is possible by replaying and processing all domain events again. This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
 
 ### 100% Cloud-native Solution
-DDD does not dictate any technology to use. However, since we are starting this project from scratch, we want to take full advantage of all AWS services available where it makes sense. So, Duis is a 100% cloud-native solution and is designed to take advnatgae of managed services available to us.
+DDD does not dictate any technology to use. However, since we are starting this project from scratch, we want to take full advantage of all AWS services available where it makes sense. So, Duis is a 100% cloud-native solution and is designed to take advnatgae of all managed services available to us.
 
 ### Serverless microservice architecture
 One of our goals is to automate as much as possible. This means that we do not want to worry about scaling our solution or pay for resources when not in use. We want the AWS managed services do all the heavy lifting. Over the years technologies and patterns have evolved so much that it is now primetime to marry them together. It's like a match made in heaven where DDD with its bounded context concept, microservices, event sourced and event-based architectures, serverless compute like Lambda are all fitting very nicely together. We just have to put the Lego pieces together now.
@@ -85,6 +85,15 @@ The source of truth within Duis are the domain events. Domain events are busines
 
 ### CQRS and event sourced architecture for high-performance executions and 100% accurate audit logs
 The CQRS pattern splits a system into two parts, the read and write portions of a system. The write part is the one that accepts commands, actions to do something. It then either processes a command or it has the power to deny execution of a command because it failed to comply with business criteria. The read portion is optimized for querying data out of the system. It's not unusal that the read portion uses polyglot persistence and take advantage of the different database and search technologies available. Duis is event sourced and this means it has an event store to save all domain events in chronological order as these domain events are happening. This event store is the source of truth. It is a journal of all domain events. All domain events are immutable. Because the event store is the source of truth, we can always proof on how Duis arives to a state at anytime in the past.
+
+### Domain-driven design (DDD) to stay as close as possible to the business
+DDD is really all about getting to know the business domain well. It facilities team learning and gaining this knowledge together as we engage with the domain experts. Ideally, we learn the lingo, the ubiquitous language of a domain. As we speak with all team members, we speak in this lingo. The language will be expressed not just verbally but also in the artifacts we create such as the name of the domain events, the source code artifacts like the class names of the aggregates, value objects, entities, etc. Even this documentation should express this language. Domain experts are not technical experts (for he most part, depending on the domain). Technology is really all about people and not technology, believe it or not. So, the people invloved managing a system, using a system, etc. are important things we need to consider and always keep in mind. 
+
+### No impedance mismatch
+Since the microservice(s) only store domain events as immutable, append only events there is no need to use any object-relational mappers such as hibernate etc. An event sourced system like Duis uses an event store as its source of truth. It does not store a current state but streams of business events in chronological order as they happen. We do not have to worry about complicated object graphs to persist into a two-dimensinal SQL database.  
+
+### Core domain model to manage all business rules centrally in one place
+Since we are using DDD, we know excatly where we need to go to to add or update business rules: the domain model. Business rules won't be sprinkled to many parts of the system, or heaven forbid, the database. Duis will not be using a rules engine of any kind since the rules are part of aggregates responsbilities and make sure they are always 100% correct (that is why they exist in DDD in the first place). Having a domain model contain all business rules also makes it great for automated tests.
 
 ## Making Changes via Commands
 <p align="center">
