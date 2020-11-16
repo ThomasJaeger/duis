@@ -62,7 +62,7 @@ Since Duis is 100% cloud-based, it makes use of automated fraud-detection servic
 ## Technical Capabilities
 The solution architecture is built on CQRS, Event Sourcing, and DDD principles. It also takes advantage of domain events as being the source of truth of the entire system. This means some traditional headaches such as the impedance mismatch does not exist anymore. There are other technical advantages that this design can bring. However, it also comes at a cost of a more complicated architecture from a technical point of view. Here are the technical advantages:
 
-  * 100% cloud-native solution
+  * 100% Cloud-native Solution
   * Serverless microservice architecture
   * Domain event-based architecture for real-time processing and dashboarding of data
   * CQRS and event sourced architecture for high-performance executions and 100% accurate audit logs
@@ -73,6 +73,15 @@ The solution architecture is built on CQRS, Event Sourcing, and DDD principles. 
   * Each read model uses polyglot persistence and takes advantage of the AWS cloud environment
   * New read models can be added in the future as if they existed from the beginning. This is achieved by replaying past domain events without side effects. The new read model can process these past domain events one at a time in chronological order. This allows for easy extensions of the architecture and further analysis of existing data.
   * Total read model recovery is possible by replaying and processing all domain events again. This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted.
+
+### 100% Cloud-native Solution
+DDD does not dictate any technology to use. However, since we are starting this project from scratch, we want to take full advantage of all AWS services available where it makes sense. So, Duis is a 100% cloud-native solution and is designed to take advnatgae of managed services available to us.
+
+### Serverless microservice architecture
+One of our goals is to automate as much as possible. This means that we do not want to worry about scaling our solution or pay for resources when not in use. We want the AWS managed services do all the heavy lifting. Over the years technologies and patterns have evolved so much that it is now primetime to marry them together. It's like a match made in heaven where DDD with its bounded context concept, microservices, event sourced and event-based architectures, serverless compute like Lambda are all fitting very nicely together. We just have to put the Lego pieces together now.
+
+### Domain event-based architecture for real-time processing and dashboarding of data
+
 
 ## Making Changes via Commands
 <p align="center">
