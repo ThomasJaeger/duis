@@ -133,10 +133,14 @@ This is achieved by replaying past domain events without side effects. The new r
 This can help in disaster recovery in case a read model is in an inconsistent state or is completely corrupted. The read model would simply replay all domain events from the event store one at a time to re-create the read models' current state.
 
 ## Event Storming
-Duis uses domain events as it's source of truth. This means Duis uses business facts that have already happned as it's source of truth. 
+Duis uses domain events as it's source of truth. This means Duis uses business facts that have already happened as it's source of truth. When we engaged with the domain experts in event storming sessions, we discovered the following domain events that are of interest to the business:
+
+<p align="center">
+  <img src="DomainEvents.png">
+</p>
 
 ## Event Store
-Duies uses an event store to persist all domain events as immutable domain events. Once stored, domain events can no longer be edited or deleted. Because these domain events are stored as immutable domain events in chronological order as they happen, we get an audit log of business facts that is 100% for free. In many domains including the financial domain, an audit log that we can proof is 100% correct is extreamly valuable. With this journal of domain events, we can proof at any time in the past how we arrive at any state of the system. 
+Duis uses an event store to persist all domain events as immutable domain events. Once stored, domain events can no longer be edited or deleted. Because these domain events are stored as immutable domain events in chronological order as they happen, we get an audit log of business facts that is 100% for free. In many domains including the financial domain, an audit log that we can proof is 100% correct is extreamly valuable. With this journal of domain events, we can proof at any time in the past how we arrive at any state of the system. 
 
 The event store is responsible of physically storing the domain events. In addition, it is also responsible of retrieving all domain events per aggregate in correct chronological order.
 
