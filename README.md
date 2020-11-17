@@ -139,6 +139,12 @@ Duis uses domain events as it's source of truth. This means Duis uses business f
   <img src="DomainEvents.jpg">
 </p>
 
+To learn more about event storming and how it can help in your software development projects, check out these resources:
+
+  * Alberto Brandolini, [Event Storming](https://leanpub.com/introducing_eventstorming)
+  * Vaughn Vernon, [Event Storming for Fun and Profit](https://www.youtube.com/watch?v=lnkARt7pRgU)
+  * Paul Rayner, [Event Storming](https://www.youtube.com/watch?v=bXm8Cznyb_s&t=2333s)
+
 ## Event Store
 Duis uses an event store to persist all domain events as immutable domain events. Once stored, domain events can no longer be edited or deleted. Because these domain events are stored as immutable domain events in chronological order as they happen, we get an audit log of business facts that is 100% for free. In many domains including the financial domain, an audit log that we can proof is 100% correct is extreamly valuable. With this journal of domain events, we can proof at any time in the past how we arrive at any state of the system. 
 
