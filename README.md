@@ -136,7 +136,7 @@ This can help in disaster recovery in case a read model is in an inconsistent st
 Duis uses domain events as it's source of truth. This means Duis uses business facts that have already happened as it's source of truth. When we engaged with the domain experts in event storming sessions, we discovered the following domain events that are of interest to the business:
 
 <p align="center">
-  <img src="DomainEvents.png">
+  <img src="DomainEvents.jpg">
 </p>
 
 ## Event Store
