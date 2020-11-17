@@ -146,6 +146,12 @@ To learn more about event storming and how it can help in your software developm
   * Paul Rayner, [Event Storming](https://www.youtube.com/watch?v=bXm8Cznyb_s&t=2333s) (Video)
   * Vaughn Vernon, [Domain-Driven Design Distilled](https://www.amazon.com/Domain-Driven-Design-Distilled-Vaughn-Vernon/dp/0134434420/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=) (Booklet)
 
+To be more specific, we will be using event modeling in order to not only capture the domain events but also user interface flows and how users would interact with Duis. To learn more about event modeling, please check out these resources:
+
+  * Event Modeling, [What is it?](https://eventmodeling.org/posts/what-is-event-modeling/)
+  
+With event modeling, we tell stories visually.
+
 ## Event Store
 Duis uses an event store to persist all domain events as immutable domain events. Once stored, domain events can no longer be edited or deleted. Because these domain events are stored as immutable domain events in chronological order as they happen, we get an audit log of business facts that is 100% for free. In many domains including the financial domain, an audit log that we can proof is 100% correct is extreamly valuable. With this journal of domain events, we can proof at any time in the past how we arrive at any state of the system. 
 
