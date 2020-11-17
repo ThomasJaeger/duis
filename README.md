@@ -149,6 +149,7 @@ To learn more about event storming and how it can help in your software developm
 To be more specific, we will be using event modeling in order to not only capture the domain events but also user interface flows and how users would interact with Duis. To learn more about event modeling, please check out these resources:
 
   * Event Modeling, [What is it?](https://eventmodeling.org/posts/what-is-event-modeling/)
+  * Event Modeling, [With Adam Dymitruk at the DDD Greece Meetup](https://www.youtube.com/watch?v=SqaDYwgQ664)
   
 With event modeling, we tell stories visually.
 
